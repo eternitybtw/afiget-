@@ -10,7 +10,10 @@ func main() {
 	b := 0
 	c := 1
 	println("Введите номер N чисел Фибоначчи:")
-	fmt.Scan(&a)
+	_, err := fmt.Scanln(&a)
+	if err != nil {
+		return
+	}
 	n, e := strconv.Atoi(a)
 	if e != nil {
 		println("Ошибка ввода")
